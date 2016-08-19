@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>iisnode logs</title>
+    <style type="text/css">
+        body
+        {
+            font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+        }
+        table
+        {
+            border-collapse: collapse;
+        }
+        td, th
+        {
+            border: 1px solid lightgray;
+            padding: 3px 7px 2px 7px;
+        }
+        th
+        {
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: Gray;
+            color: #ffffff;
+        }
+        td.stderr
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <table id="logFilesTable">
+        <tr>
+            <th>
+                Computer name
+            </th>
+            <th>
+                PID
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Created
+            </th>
+            <th>
+                Link
+            </th>
+        </tr>
+    </table>
+    <p id="lastUpdated"></p>
+    <script type="text/javascript">
+
+        // this is replaced with actual data at runtime by code in interceptor.js
+        var logFiles = [{"file":"GARY10-1396-stdout-1471591477560.txt","computername":"GARY10","pid":1396,"type":"stdout","created":1471591477560},{"file":"GARY10-22028-stdout-1471592200124.txt","computername":"GARY10","pid":22028,"type":"stdout","created":1471592200124},{"file":"GARY10-23292-stdout-1471591297613.txt","computername":"GARY10","pid":23292,"type":"stdout","created":1471591297613},{"file":"GARY10-23464-stdout-1471592378202.txt","computername":"GARY10","pid":23464,"type":"stdout","created":1471592378202},{"file":"GARY10-2652-stdout-1471591828980.txt","computername":"GARY10","pid":2652,"type":"stdout","created":1471591828980},{"file":"GARY10-27744-stdout-1471590631764.txt","computername":"GARY10","pid":27744,"type":"stdout","created":1471590631764},{"file":"GARY10-28360-stdout-1471591293279.txt","computername":"GARY10","pid":28360,"type":"stdout","created":1471591293279},{"file":"GARY10-7308-stdout-1471590876138.txt","computername":"GARY10","pid":7308,"type":"stdout","created":1471590876138}];
+        var lastUpdated = 1471592378288;
+        var date = new Date();
+
+        date.setTime(lastUpdated);
+        document.getElementById('lastUpdated').innerHTML = 'Index was last updated ' + date;
+
+        logFiles.sort(function (a, b) {
+            return b.created - a.created;
+        });
+
+        var logFilesTable = document.getElementById("logFilesTable");
+        for (var i = 0; i < logFiles.length; i++) {
+            var logFile = logFiles[i];
+            date.setTime(logFile.created);
+            var row = logFilesTable.insertRow(-1);
+            var computerNameCell = row.insertCell(0);
+            var pidCell = row.insertCell(1);
+            var typeCell = row.insertCell(2);
+            var dateCell = row.insertCell(3);
+            var logCell = row.insertCell(4);
+            computerNameCell.innerHTML = logFile.computername;
+            pidCell.innerHTML = logFile.pid.toString();
+            typeCell.innerHTML = logFile.type;
+            typeCell.setAttribute('class', logFile.type);
+            dateCell.innerHTML = date.toString();
+            logCell.innerHTML = '<a href="' + logFile.file + '">log</a>';
+        };
+
+    </script>
+</body>
+</html>

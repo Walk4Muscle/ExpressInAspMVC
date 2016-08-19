@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script src="http://cdn.bootcss.com/angular.js/1.4.0-rc.2/angular.min.js"></script>
+    </head>
+    <body ng-app="app">
+          <div ng-controller="testCtrl">
+              {{response}}
+          </div>
+    </body>
+<script type="text/javascript">
+    var app = angular.module('app', []);
+    app
+    .controller('testCtrl', function ($scope, $http) {
+        $http.get('http://garyexpressjs.azurewebsites.net/users').then(function (data) {
+            $scope.response = data;
+        })
+    })
+</script>
+</html>

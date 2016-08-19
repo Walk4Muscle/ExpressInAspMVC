@@ -1,0 +1,3 @@
+Express server listening on port \\.\pipe\a0150d06-4eda-41f0-86c7-3d27381ce3b2
+[90mGET /Node/server.js [33m404 [90m7ms[0m
+[90mGET /Node/server.js [33m404 [90m2ms[0m

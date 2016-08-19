@@ -1,0 +1,12 @@
+Express server listening on port \\.\pipe\caa4cede-ed2e-463a-b628-5b4ec9c3d22c
+[90mGET /Node/server.js [33m404 [90m6ms[0m
+[90mGET /Node/server.js [33m404 [90m1ms[0m
+[90mGET /Node/server.js/ [33m404 [90m2ms[0m
+[90mGET /Node/server.js/user [33m404 [90m1ms[0m
+[90mGET /Node/server.js/user [33m404 [90m0ms[0m
+[90mGET /Node [33m404 [90m0ms[0m
+[90mGET /Node/app.js [33m404 [90m0ms[0m
+[90mGET /Node/server.js [33m404 [90m1ms[0m
+[90mGET /Node/app.js [33m404 [90m1ms[0m
+[90mGET /Node/server.js [33m404 [90m1ms[0m
+[90mGET /Node/app.js [33m404 [90m1ms[0m
